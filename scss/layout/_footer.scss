@@ -1,0 +1,33 @@
+//
+//
+//
+// .main-footer {
+//   padding-top: 20pt;
+//   padding-bottom: 20pt;
+//   border-top: 1px solid black;
+//   @extend %primary_container_width;
+//   @extend %margin0;
+//   .header-name {
+//     float: left;
+//     margin: 0;
+//     padding: 0;
+//     }
+//   @include breakpoint(tablet)
+//       {
+//         .back-to-top a{
+//           float:left;
+//           display:none;
+//           }
+//         .footer-li{
+//           display: inline;
+//           float: right;
+//           li{
+//             float: left;
+//             padding-left: 10pt;
+//             }
+//           }
+//         .footer-nav a{
+//           display: inline;
+//           }
+//         }
+//   }

@@ -1,0 +1,26 @@
+// // Centered Text
+// %centered {
+//   text-align: center;
+// }
+//
+//
+// Centered Item with margin: 0 auto;
+
+%margin0 {
+  margin: 0 auto;
+}
+//    Flex Box Containers
+%flexBoxLayout {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+//
+//
+// // Primary Container Width
+//
+// %primary_container_width   {
+//   width: 90%;
+//
+// }

@@ -1,0 +1,189 @@
+
+
+button:focus {
+  outline: none;
+}
+
+fieldset {
+  #search,
+  // button,
+  textarea,
+  select,
+    {
+    &:hover{cursor:pointer;};
+    border: $tertiary-button-color solid 1px;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 1em ;
+    margin-left: 0;
+    outline: none;
+    @include breakpoint(tablet){
+      margin: 1em 0 1em 0;
+      };
+     // input-select group end
+   }
+
+  label{
+    &:hover
+      {cursor:pointer;};
+    width: 25%;
+    height: 2em;
+    // padding: 2em;
+    background-color: $primary-button-color ;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 1em ;
+    border-radius: 25px;
+    color: $secondary-font-color;
+
+    @include breakpoint(tablet){
+        margin: 1em 0 0 0;
+      // width: 90%;
+        };
+    };//label end
+   p {
+     display:flex;
+      };
+   input {
+     border-radius: 5%;
+     &.tftextinput{
+       border-color: lightgray;
+       height: 3em;
+       width: 15em;
+       border-radius: 5px;
+      };
+     #email,
+     #public-profile{
+         width: 20%;
+         height: 20%;
+         display: flex;
+         justify-content: flex-end;
+       };
+   }//input end
+} //Fieldset end
+
+
+#save-button,
+#cancel-button,
+#send-button {
+  &:hover{cursor:pointer;};
+  border: 1px solid gray;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 1em ;
+  margin-left: 0;
+  outline: none;
+  background-color: $primary-button-color;
+
+  @include breakpoint(tablet){
+    margin: 1em 0 1em 0;
+    };
+   // input-select group end
+ }
+
+ #send-button {
+   width: 100%;
+ }
+
+
+//NOT WORKING....BUTTONS SHOULD HAVE SPACE BETWEEN THEM
+button#save-button,
+button#cancel-button{
+   width: 47.5%;
+ }
+
+
+
+
+// ARROW BUTTONS: START
+i {
+    &:hover{cursor:pointer;};
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 2px;
+    height: 1em;
+    width: 1em;
+    margin-right: 1em;
+    margin-top: 3em;
+    border-color: $primary-button-color;
+    @include breakpoint (desktop) {
+    margin-top: 1.5em;
+    height: .5em;
+    width: .5em;
+    }
+}
+
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+// ARROW BUTTONS: END
+
+
+//TRAFFIC LINE CHART HOURLY-DAILY-WEEKLY-MONTHLY
+.traffic-charts-buttons {
+  background-color: $tertiary-button-color;
+  border-radius: 20px;
+  border-width: 1px;
+  width: 7em;
+  height: 5em;
+  margin-left: 2em;
+  @include breakpoint (tablet){
+    border-width: 0;
+    width: 5em;
+    height: 2em;
+  }
+}
+
+.activeNavIcon {
+ fill:$tertiary-button-color;
+}
+
+
+
+#alert-x-button{
+  background-color: $primary-button-color;
+  color: $tertiary-button-color;
+  border: none;
+  font-size: 2em;
+}
+
+
+
+
+#left-nav li {
+  display: block;
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  list-style: none;
+  border: white 2px solid;
+  width: 100%;
+  .st0:hover {fill: $left-nav-hover-color};
+}
+
+
+#search-box input {
+  margin: .5em 1em .5em 0;
+  float: right;
+  width: 75%;
+  height: 3em;
+  text-indent: 10px;
+  border-radius: 5px;
+  @include breakpoint (tablet){
+    width:50%;
+  };
+  @include breakpoint (desktop){
+    width:40%;
+  }
+
+}

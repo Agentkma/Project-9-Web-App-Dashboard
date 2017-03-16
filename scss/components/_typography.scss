@@ -1,0 +1,170 @@
+
+
+
+
+* {
+  @extend %primary-font-family;
+  color: $primary-font-color;
+  font-size: $secondary-fontsize;
+  @include breakpoint(tablet){
+    font-size: $T-secondary-fontsize;
+  }
+}
+
+
+
+h1 {
+    font-size: 1em;
+    @include breakpoint (tablet){
+      font-size: 2em;};
+    }
+
+
+h2,
+legend {
+  font-size: $header-h2-fontsize;
+  @include breakpoint(tablet){
+    font-size: $T-header-h2-fontsize;
+
+  }
+}
+
+  .alert-box-text,
+  .header-text
+          {
+            color: $secondary-font-color;
+          }
+
+.member-emails {
+  color: $tertiary-font-color;
+  text-decoration: none;
+}
+
+.member-name-email h3,
+.member-name-email a,
+.recent-activity p{
+  @include breakpoint (desktop){
+    font-size: .75em;
+  }
+
+}
+
+.form-button{
+    color: $secondary-font-color;
+  }
+
+
+.socialName {
+  color:$tertiary-font-color;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.socialNumber {
+  font-size: 1em;
+}
+
+.traffic-charts-buttons{
+  font-size: .5em;
+  @include breakpoint (tablet){
+    font-size: 1em;
+  }
+}
+
+#alert-text {
+  padding: 0 1em;
+}
+
+#dash-page {
+  font-size: 1em;
+  @include breakpoint(tablet){
+    font-size: 1.5em;
+  }
+}
+
+
+
+// /*************** VARIABLES ****************/
+//
+// $header-h1-fontsize   :    25pt;
+// $secondary-fontsize   :    20pt;
+// $primary-fontfamily   :    arial, sans-serif;
+// $primary-font-color   :    black;
+//
+//
+//  $primary-fontsize    :    15pt;
+//  $primary-font-weight :    bold;
+//  $text-uppercase      :    uppercase;
+//
+//
+//
+//
+//
+// /*****could create mixin with font weight, size, text transorm as arguments to pass in with default values*****/
+//
+// @mixin Fonts ($fontsize:"15pt", $fontweight:"bold",$textransform:"uppercase", $fontcolor:black)
+// {font-size:$fontsize;
+// font-weight:$fontweight;
+// text-transform:$texttransform;
+// color: $fontcolor;
+// }
+//
+//
+// * {
+//   @include Fonts(null,lighter,null);
+//   font-family: $primary-fontfamily;
+//   }
+//
+//
+//   body {
+//
+//     font-family: $primary-fontfamily;
+//       }
+//
+// h1 {
+//   @include Fonts(bold,25px,none);
+//   }
+//
+// h2 {
+//   @include Fonts(20px);
+//   }
+//
+// h3 {
+//   @include Fonts(500,15px,none);
+//
+//   }
+//
+// a {
+//   @include Fonts(15,null,none);
+//   text-decoration: none;
+//   }
+//
+// .main-nav a {
+//   @include Fonts;
+//   line-height: 30pt;
+//     }
+//
+//
+// .profile-intro {
+// @include Fonts(15px,null,null);
+// line-height: 125%;
+//   }
+//
+//
+// .header-name{
+//   @include Fonts(null, bold,none);
+//
+//
+// }
+//
+//   .back-to-top a{
+//     @include Fonts(20px);
+//     }
+//
+//   @media (min-width: 768px){
+//
+//     .footer-li li
+//     {@include Fonts(null,null,uppercase);
+//
+//     }
+//   }
