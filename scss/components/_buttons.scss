@@ -4,6 +4,10 @@ button:focus {
   outline: none;
 }
 
+button:hover {
+  cursor:pointer;
+}
+
 fieldset {
   #search,
   // button,
@@ -129,6 +133,24 @@ i {
 // ARROW BUTTONS: END
 
 
+// LEFT NAV ICON/BUTON WHEN CLICKED
+.activeNavIcon {
+
+  background-color: $secondary-button-color;
+  display: inline-block;
+	width: 45px;
+	height: 5px;
+	position: absolute;
+	bottom: -13px;
+	left: -2px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	transition-property: width, height;
+
+}
+
+
 //TRAFFIC LINE CHART HOURLY-DAILY-WEEKLY-MONTHLY
 .traffic-charts-buttons {
   background-color: $tertiary-button-color;
@@ -144,9 +166,7 @@ i {
   }
 }
 
-.activeNavIcon {
- fill:$tertiary-button-color;
-}
+
 
 
 

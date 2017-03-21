@@ -29,11 +29,11 @@ legend {
   }
 }
 
-  .alert-box-text,
-  .header-text
-          {
-            color: $secondary-font-color;
-          }
+.alert-box-text,
+.header-text
+        {
+          color: $secondary-font-color;
+        }
 
 .member-emails {
   color: $tertiary-font-color;
@@ -58,10 +58,18 @@ legend {
   color:$tertiary-font-color;
   font-size: 1em;
   font-weight: bold;
+  @include breakpoint (tablet){
+    font-size: 1.5em;
+  }
 }
 
 .socialNumber {
+
   font-size: 1em;
+  @include breakpoint (tablet){
+    font-size: 2em;
+  }
+
 }
 
 .traffic-charts-buttons{

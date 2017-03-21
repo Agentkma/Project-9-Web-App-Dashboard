@@ -18,6 +18,9 @@ body {
 button:focus {
   outline: none; }
 
+button:hover {
+  cursor: pointer; }
+
 fieldset #search,
 fieldset textarea,
 fieldset select {
@@ -120,6 +123,19 @@ i {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg); }
 
+.activeNavIcon {
+  background-color: green;
+  display: inline-block;
+  width: 45px;
+  height: 5px;
+  position: absolute;
+  bottom: -13px;
+  left: -2px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  transition-property: width, height; }
+
 .traffic-charts-buttons {
   background-color: #ffffff;
   border-radius: 20px;
@@ -132,9 +148,6 @@ i {
       border-width: 0;
       width: 5em;
       height: 2em; } }
-
-.activeNavIcon {
-  fill: #ffffff; }
 
 #alert-x-button {
   background-color: mediumslateblue;
@@ -171,20 +184,34 @@ i {
   opacity: .8; }
 
 .socialIcon {
-  width: 2em;
-  height: 2em;
+  width: 1.5em;
+  height: 1.5em;
   background-color: mediumslateblue;
-  border-width: 20%;
+  border-width: 10%;
   border-radius: 50%;
-  padding: 2em; }
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  margin: auto 0; }
 
 .socialName {
   margin: auto 0; }
 
 #bell-icon {
   border-right: slateblue 1px solid;
-  padding-right: 1em;
+  padding-right: .5em;
   /*change border color to rgba so I can add opacity to end*/ }
+
+#bell-active-note {
+  display: inline-block;
+  position: relative;
+  width: 10px;
+  height: 10px;
+  top: -20px;
+  left: 5px;
+  background-color: green;
+  z-index: 200000;
+  border-radius: 50%; }
 
 #dashboard-icon svg .st0,
 #members-icon svg .st0,
@@ -240,9 +267,15 @@ legend {
   color: mediumslateblue;
   font-size: 1em;
   font-weight: bold; }
+  @media (min-width: 768px) {
+    .socialName {
+      font-size: 1.5em; } }
 
 .socialNumber {
   font-size: 1em; }
+  @media (min-width: 768px) {
+    .socialNumber {
+      font-size: 2em; } }
 
 .traffic-charts-buttons {
   font-size: .5em; }
@@ -373,21 +406,39 @@ fieldset {
   background-color: rgba(191, 192, 223, 0.3);
   border-radius: 5px;
   border: lightgray solid 1px;
-  width: 30%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around; }
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 1em auto; }
+  @media (min-width: 768px) {
+    .twitterWidget,
+    .facebookWidget,
+    .googleWidget {
+      width: 30%; } }
 
-div .socialIcon,
 .socialName,
 .socialNumber {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  margin: auto 0;
+  padding: 1em .5em; }
+
+.settings-button-label {
+  text-align: center; }
+
+.socialStats {
+  margin: auto 0; }
 
 /************* ID STYLES *****************/
 #alert-box {
   border-radius: 5px;
   margin: 1em 0; }
+
+canvas > #dailyTrafficChart,
+canvas > #mobileUsersChart {
+  width: 300px;
+  height: 300px; }
 
 #new-members-recent,
 #recent-activity,
@@ -472,7 +523,14 @@ div .socialIcon,
   background-color: rgba(191, 192, 223, 0.3); }
 
 #social-widgets {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%; }
+  @media (min-width: 768px) {
+    #social-widgets {
+      flex-direction: row; } }
 
 #socialStatsContainer {
   margin: 1em; }
