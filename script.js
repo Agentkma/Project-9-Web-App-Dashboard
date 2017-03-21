@@ -1,61 +1,50 @@
 window.onload = function() {
-//Colors VARIABLES
+  /******************************
+  	           VARIABLES
+  	******************************/
 
 var point_radius_color;
 var below_line_fill_color;
 var primary_bar_desktop_color= 'rgba(123, 104, 238, 1)';
 var traffic_button_tablets_color='#2ac641';
+
 var phone_color='#2388b3';
 var text_number_color;
+var $dashboard = $("#dashboard-icon");
+var $members = $("#members-icon");
+var $charts = $("#visits-icon");
+var $settings = $("#settings-icon");
+var $alert_text = $("#alert-text");
 
 
 
-//click on logo brings you to top of page
+/******************************
+	OBJECTS-ORIENTED VARIABLES
+	******************************/
 
-// Notifications
+	/*****  Navigation Object Literal  *****/
+	var nav = {
 
-// REMOVE NOTIFICATION BAR WHEN USER CLICKS X BUTTON
-// document.getElementById('alert-text').addEventListener('click', function () {
-//   $('#alert-text').remove();
-// });
+		// Show active nav item link, using green bar,
+		//  on main navigation menu
+		activeNav: function(link) {
 
+			$("#left-nav ul").find("li").each(function(){
+				$(this).find("span").removeClass("activeNavIcon");
+			});
+			link.find("span").addClass("activeNavIcon");
 
-//Parent Notification Bar
+		}
 
-
-//Append Notifications to page
-
-
-
-//Notfication list-style
-
-//LEFT NAV BAR EVENT LISTENERS:
-    //when nave icon clicked icon is highlighted and others are lowlighted
-
-document.getElementById('dashboard-icon').addEventListener('click', function(){
-
-  //add highlight to active/clicked icon
-  this.addClass('activeNavIcon');
-
-  });
-  //remove highlight from other nav icons
-// document.getElementById('members-icon').removeClass('activeNavIcon');
-// document.getElementById('visits-icon').removeClass('activeNavIcon');
-// document.getElementById('settings-icon').removeClass('activeNavIcon');
+	};
 
 
 
-
-    //when clicked....page jumps to appropriate section
-
-
-//TRAFFIC LINE CHART
+  /******************************
+  	         FUNCTIONS
+  	******************************/
 
 
-
-//CREATE HOURLY TRAFFIC LINE CHART
-
-//CREATE DAILY TRAFFIC LINE CHART
 
 //CREATE WEEKLY TRAFFIC LINE CHART
 function weeklyChart () {
@@ -71,6 +60,7 @@ function weeklyChart () {
               borderWidth: 1,
               tension: 0,
               backgroundColor: 'rgba(151, 145, 222, 0.3)',
+              responsive: true,
           }]
       },
       options: {
@@ -87,31 +77,7 @@ function weeklyChart () {
   });
 }
 
-//*************FUNCTIONS
 
-// MAKE WEEKLY BUTTON the active Button
-  function weeklyButton (){ document.getElementById('weeklyTraffic');
-  $(this).css( 'background-color', 'green');
-  $(this).css( 'color', 'white');
- }
-
-
-
-
-//Give Traffic Line Chart active button background-color/
-function activeButton () {document.getElementsByClassName('traffic-charts-buttons').addEventListener('click', function () {
-
-    $(this).css( 'background-color', 'green');
-    $(this).css( 'color', 'white');
-
-
-    //remove other  buttons background colors
-    document.getElementById('hourlyTraffic').$(this).css( 'background-color', 'white');
-    document.getElementById('dailyTraffic').$(this).css( 'background-color', 'white');
-    document.getElementById('monthlyTraffic').$(this).css( 'background-color', 'white');
-
-  });
-}
 
 
 
@@ -131,21 +97,28 @@ function dailyBarChart () {
           datasets: [{
 
               data: [75, 100, 175,125,225, 200, 100],
-              borderWidth: 1,
+
               // tension: 0,
               backgroundColor: 'rgba(123, 104, 238, 1)',
 
           }]
       },
       options: {
-          scales: {
+        bar: {
+            barPercentage:10
+          },
+        scales: {
               yAxes: [{
                   ticks: {
                       beginAtZero:true
                   }
               }]
           },
-          legend: {display: false}
+          legend: {
+              display: false
+          },
+          responsive: true,
+          mainAspectRatio:false
       }
   });
 
@@ -169,7 +142,8 @@ function mobileUsersChart () {
                 phone_color,
                 traffic_button_tablets_color,
                 primary_bar_desktop_color
-              ],
+              ]
+
 
           }]
       },
@@ -181,24 +155,94 @@ function mobileUsersChart () {
                  },
           // circumference: 2.5 * Math.PI,
           cutoutPercentage:  60,
+          responsive: true,
+          mainAspectRatio:false,
       }
   });
 
+}
+
+// MAKE WEEKLY BUTTON the active Button
+
+
+function activeWeekly () {
+  var button = document.getElementById("weeklyTraffic");
+  button.style.color="white";
+  button.style.backgroundColor="green";
+}
+
+
+
+// MESSAGE FORM FIELD TEST
+
+function messageFormTest () {
+  if (document.forms['message-user'].search.value === "" ||
+      document.forms['message-user'].messageUser.value === "")
+//   display error messages if user isn’t selected or message field is EMPTY
+
+      {
+        alert("All fields must be filled in to submit form");
+      }
+
+// display message when message sent correctly
+  else {
+        alert("Your message has been sent!");
+        }
 }
 
 
 
 
 
-// OPERATIONS
+/******************************
+	EVENT LISTENERS/HANDLERS
+	******************************/
+
+	/*******  NAV BUTTONS  *******/
+
+	// Dashboard Nav Item
+	$dashboard.click(function(){
+		nav.activeNav($(this));
+	});
+	// Members Nav Item
+	$members.click(function(){
+		nav.activeNav($(this));
+	});
+	// Charts Nav Item
+	$charts.click(function(){
+		nav.activeNav($(this));
+	});
+	// Settings Nav Item
+	$settings.click(function(){
+		nav.activeNav($(this));
+	});
+
+
+  ///////J QUERY
+
+  // / WHEN CLICKED...Give Traffic Line Chart active button background-color
+  $(".traffic-charts li button").click( function () {
+
+    // remove active color from other BUTTONS
+  $(".traffic-charts li button").css({
+    "background-color" : "white",
+    "color": "gray",
+  });
+    //add active color to button clicked
+      $(this).css({
+        "background-color" : "green",
+        "color": "white",
+      });
+    }
+  );
 
 
 
 //Show WEEKLY TRAFFIC LINE CHART BY DEFAULT
 document.onload=weeklyChart();
 
-//Show Weekly Button as Active by Default
-document.onload=weeklyButton ();
+// //Show Weekly Button as Active by Default
+document.onload=activeWeekly ();
 
 //Show DAILY BAR CHART ON LOAD
 document.onload=dailyBarChart();
@@ -206,10 +250,13 @@ document.onload=dailyBarChart();
 //Show MOBILE USERS DOUGHNUT CHART ON LOAD
 document.onload=mobileUsersChart();
 
-// GIVE ACTIVE TRAFFIC LINE CHART BUTTON BACKGROUND COLOR
-window.addEventListener('load', activeButton);
 
- };
+
+
+
+// WHEN MESSAGE FORM SEND BUTTON CLICKED/ RUN messageFormTest () function
+document.getElementById('send-button').addEventListener('click', messageFormTest);
+
 //WHEN HOURLY BUTTON clicked
     //SHOW HOURLY TRAFFLIC LINE CHART
     //Give active button background-color/ remove other  buttons background colors
@@ -222,5 +269,10 @@ window.addEventListener('load', activeButton);
   //SHOW WEEKLY TRAFFIC CHART
 
 
-// AlERT box
-// WHEN x button is clicked, the alert box div display set to none or not visible
+// REMOVE  ALERT/NOTIFICATION BAR WHEN USER CLICKS X BUTTON
+
+$("#alert-x-button").click( function () {
+    $("#alert-box").remove();
+    $("#bell-active-note").remove();
+    });
+ };

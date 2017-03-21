@@ -28,7 +28,7 @@
               <svg class="bell-icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
               	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve" width="30px" height="30px">
               <style type="text/css">
-              	.st0{fill:#FFFFFF;}
+              	.st0{fill:#808080;}
               </style>
               <g id="_x36__6_">
               	<g>
@@ -38,7 +38,10 @@
               </g>
               </svg>
             </a>
+               <span id="bell-active-note"> </span>
           </li>
+
+
 
           <li><img id="profile-pic" src="icons/Profile-Pic.jpg" width="30" height="30" alt="profile-pic">
 
@@ -76,6 +79,7 @@
                   </svg>
 
                   </a>
+                  <span class="activeNavIcon"></span>
                 </li>
 
                 <li id="members-icon">
@@ -101,6 +105,7 @@
                     </svg>
 
                   </a>
+                    <span></span>
                 </li>
 
                 <li id="visits-icon">
@@ -124,6 +129,7 @@
                     </svg>
 
                   </a>
+                    <span></span>
                 </li>
 
                 <li id="settings-icon">
@@ -151,6 +157,7 @@
                     </svg>
 
                   </a>
+                    <span></span>
                 </li>
               </ul>
             <!-- END LEFT NAV -->
@@ -193,7 +200,7 @@
             <div id="daily-traffic-mobil-widget">
               <div class="dailyTraffic">
                 <h2>DAILY TRAFFIC</h2>
-                <canvas id="dailyTrafficChart"></canvas>
+                <canvas id="dailyTrafficChart" ></canvas>
               </div>
 
               <div class="mobileUsers">
@@ -225,9 +232,9 @@
                 </div>
 
                 <div class="googleWidget">
-                  <div>
+
                   <img src="icons/icon-google-plus.svg" alt="google-icon" class="socialIcon">
-                  </div>
+
                   <div class="socialStats">
                     <p class="socialName">Google+ </p>
                     <p class="socialNumber">2530 </p>
@@ -336,10 +343,10 @@
               <!-- BEGIN MESSAGE Container -->
                <div id="message-container">
                  <h2>MESSAGE USER</h2>
-                 <form>
+                 <form name="message-user">
                    <fieldset>
                        <input type="search" id="search" name="search" placeholder="Search for User">
-                       <textarea placeholder="Message for User" id="message-textarea"></textarea>
+                       <textarea name ="messageUser" placeholder="Message for User" id="message-textarea"></textarea>
                        <button id="send-button" class="form-button">SEND</button>
                  </fieldset>
                  </form>
@@ -355,14 +362,14 @@
                     <fieldset>
                         <div class="notification_p_lablel">
                           <p>Send Email Notifications </p>
-                          <label for="email"> ON
+                          <label class="settings-button-label" for="email"> ON
                             <input type="radio" id="email" name="email-notification">
                           </label>
                         </div>
 
                         <div class="notification_p_lablel">
                           <p>Set profile to public </p>
-                          <label for="public-profile"> ON
+                          <label class="settings-button-label" for="public-profile"> ON
                             <input type="radio" id="public-profile" name="public-profile">
                           </label>
                         </div>
