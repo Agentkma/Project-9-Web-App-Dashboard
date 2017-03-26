@@ -10,7 +10,6 @@ button:hover {
 
 fieldset {
   #search,
-  // button,
   textarea,
   select,
     {
@@ -33,17 +32,14 @@ fieldset {
       {cursor:pointer;};
     width: 25%;
     height: 2em;
-    // padding: 2em;
     background-color: $primary-button-color ;
     display: inline-block;
     box-sizing: border-box;
     margin: 1em ;
     border-radius: 25px;
     color: $secondary-font-color;
-
     @include breakpoint(tablet){
         margin: 1em 0 0 0;
-      // width: 90%;
         };
     };//label end
    p {
@@ -79,7 +75,6 @@ fieldset {
   margin-left: 0;
   outline: none;
   background-color: $primary-button-color;
-
   @include breakpoint(tablet){
     margin: 1em 0 1em 0;
     };
@@ -91,7 +86,6 @@ fieldset {
  }
 
 
-//NOT WORKING....BUTTONS SHOULD HAVE SPACE BETWEEN THEM
 button#save-button,
 button#cancel-button{
    width: 47.5%;
@@ -133,22 +127,21 @@ i {
 // ARROW BUTTONS: END
 
 
-// LEFT NAV ICON/BUTON WHEN CLICKED
-.activeNavIcon {
-
-  background-color: $secondary-button-color;
-  display: inline-block;
-	width: 45px;
-	height: 5px;
-	position: absolute;
-	bottom: -13px;
-	left: -2px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	transition-property: width, height;
-
-}
+// LEFT NAV ICON/BUTON WHEN CLICKED// NOT WORKING/FUNCTIONAL
+// .activeNavIcon {
+//   background-color: $secondary-button-color;
+//   display: inline-block;
+// 	width: 45px;
+// 	height: 5px;
+// 	position: absolute;
+// 	bottom: -13px;
+// 	left: -2px;
+// 	-webkit-border-radius: 3px;
+// 	-moz-border-radius: 3px;
+// 	border-radius: 3px;
+// 	transition-property: width, height;
+//
+// }
 
 
 //TRAFFIC LINE CHART HOURLY-DAILY-WEEKLY-MONTHLY
@@ -156,12 +149,11 @@ i {
   background-color: $tertiary-button-color;
   border-radius: 20px;
   border-width: 1px;
-  width: 7em;
+  width: 5em;
   height: 5em;
   margin-left: 2em;
   @include breakpoint (tablet){
     border-width: 0;
-    width: 5em;
     height: 2em;
   }
 }
@@ -176,8 +168,6 @@ i {
   border: none;
   font-size: 2em;
 }
-
-
 
 
 #left-nav li {
@@ -205,5 +195,4 @@ i {
   @include breakpoint (desktop){
     width:40%;
   }
-
 }

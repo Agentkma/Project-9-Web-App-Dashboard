@@ -56,18 +56,18 @@ legend {
 
 .socialName {
   color:$tertiary-font-color;
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: bold;
   @include breakpoint (tablet){
-    font-size: 1.5em;
+    // font-size: 1.5em;
   }
 }
 
 .socialNumber {
 
-  font-size: 1em;
+  font-size: 2em;
   @include breakpoint (tablet){
-    font-size: 2em;
+  
   }
 
 }

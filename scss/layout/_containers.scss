@@ -19,7 +19,6 @@ fieldset {
     display: inline-block;
     justify-content: center;
     width: 50%;
-
     padding: 1em;
     }
 }
@@ -113,9 +112,7 @@ fieldset {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
-
     }
-
   }
 
 .traffic {
@@ -133,7 +130,6 @@ fieldset {
 .googleWidget {
   background-color: $section-bckgrd-color;
   border-radius: 5px;
-  // @include section-borders(border);
   border: $tertiary-color solid 1px;
   width: 100%;
   display: flex;
@@ -146,7 +142,7 @@ fieldset {
 
 }
 
-// div .socialIcon,
+
 .socialName,
 .socialNumber {
   display: flex;
@@ -159,10 +155,12 @@ fieldset {
 
 .settings-button-label {
   text-align: center;
+  padding-top: .25em;
+
 }
 
 .socialStats {
-
+  width: 60%;
   margin: auto 0;
 }
 
@@ -212,8 +210,6 @@ canvas > #mobileUsersChart {
 }
 
 #daily-traffic-mobil-widget{
-  // @include section-borders(border-top); not working
-  // @include section-borders(border-bottom); not working
   border-top: $tertiary-color solid 1px;
   border-bottom: $tertiary-color solid 1px;
   @include breakpoint(tablet){
