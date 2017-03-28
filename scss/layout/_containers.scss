@@ -27,13 +27,14 @@ fieldset {
 .main-content {
   @extend %margin0;
   padding: 0 1em;
-  width: 90%;
+  width: 95%;
   height: 100%;
   top:4em;
   @include breakpoint(tablet){
     position: absolute;
-    right:.75em;
-    width: 85%;
+    left: 100px;
+    width: 95%;
+
     }
 }
 
@@ -45,15 +46,25 @@ fieldset {
 
 
 .mobileUsers {
+  margin-bottom: 1em;
   @include breakpoint(tablet){
     border-left: $tertiary-color solid 1px;
+    margin-bottom: 0;
   }
+}
+
+.new-member-pic-email,
+.recent-pic-text {
+display: flex;
+width: 80%;
+
 }
 
 .new-members-each,
 .recent-each{
   @include section-borders(border-top);
   @extend %flexBoxLayout;
+
   min-height: 10em;
   margin-bottom: 1em;
   @include breakpoint(tablet){
@@ -68,13 +79,14 @@ fieldset {
 
 .member-name-email,
 .recent-activity {
-  width: 60%;
-  margin: auto 0;
+  width: 80%;
+  margin: auto 1em;
   display:flex;
   flex-direction: column;
-  flex-shrink: 1;
+  flex-wrap: wrap;
+
   @include breakpoint(tablet){
-  margin-left: 0;
+
   // width:70%
   }
 }
@@ -85,8 +97,8 @@ fieldset {
   border-radius: 50%;
   margin: auto 0;
   @include breakpoint(tablet){
-  width: 10%;
-  height: 10%;
+  width: 2em;
+  height: 2em;
   }
 }
 
@@ -102,17 +114,17 @@ fieldset {
 .arrow-right{
   margin: auto 0;
   width: 20%;
+  height: 100%;
 }
 
 .notification_p_lablel,
 .settings-buttons {
   width: 100%;
-  @include breakpoint(tablet){
+  margin-bottom: 1.25em;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
-    }
   }
 
 .traffic {
@@ -174,14 +186,6 @@ fieldset {
   margin: 1em 0;
 }
 
-canvas > #dailyTrafficChart,
-canvas > #mobileUsersChart {
-
-  width: 300px;
-  height: 300px;
-
-
-}
 
 
 #new-members-recent,
@@ -234,17 +238,23 @@ canvas > #mobileUsersChart {
     left:0;
     display:flex;
     justify-content: space-around;
-    width: 10%;
+    width: 100px;
     height: 100%;
     top: 4em;
+    ul {
+      position:relative;
+
+    }
       li {
         border:none;
+        display: flex;
       }
   }
 }
 
 #message-textarea {
   height: 6.5em;
+  -moz-appearance:textfield-multiline;
 }
 
 #new-members-all,
@@ -303,184 +313,3 @@ canvas > #mobileUsersChart {
     margin-bottom: 2em;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-// /*************VARIABLES**************/
-// $secondary-background-color  :    white;
-// $main-container-width        :    90%;
-//
-//
-//
-//
-//
-// /*************STYLES*************/
-//
-//
-// .main-header {
-//   width: $main-container-width ;
-//   /*display:block;*/
-//   margin: auto;
-//   @include breakpoint(tablet){
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;}
-//   @include breakpoint(desktop){
-//     flex-direction: row;
-//     justify-content: space-between;
-//     }
-//   }
-//
-//
-//
-// .main-nav
-//   { a {width: 100%;}
-//       li {
-//           margin: 5px 20px;
-//         }
-//     @include breakpoint(tablet)
-//       {
-//       display: flex;
-//       align-items: flex-end;
-//
-//       }
-//    @include breakpoint(desktop)
-//       {
-//         margin: 5px 0px 5px 20px;
-//       }
-//     }
-//
-//
-//
-//
-// .profile-section{
-//   width: $main-container-width ;
-//   @extend %margin0;
-//   @include breakpoint(tablet){
-//       display: flex;
-//       padding-top: 15pt;
-//       padding-bottom: 15pt;
-//       }
-//   @include breakpoint(desktop){
-//      }
-//   }
-//
-//
-// .profile-pic{
-//   width:60%;
-//   @extend %margin0;
-//   padding-bottom: 20pt;
-//   @include breakpoint(tablet){
-//       width:40%;
-//       padding-left: 10pt;
-//       order: 2;
-//       }
-//   }
-//
-// .profile-intro {
-//
-//   padding-bottom: 5pt;
-//   width: 100%;
-//   @extend %margin0;
-//   @include breakpoint(tablet){
-//     line-height: 20pt;
-//     width: 60%;
-//      p
-//        {text-align: left;
-//         padding-top: 15pt;
-//         margin: 0;
-//         margin-right: 0;
-//         }
-//       }
-//   @include breakpoint(desktop)
-//     { line-height: 30pt;
-//       p
-//       {margin-right: 10pt;
-//        order: -1;
-//       }
-//     }
-//   }
-//
-// .portfolio-heading{
-//   padding-bottom: 15pt;
-//   padding-top: 20pt;
-//   margin: 0;
-//     }
-//
-// .port-background{
-//   width: 100%;
-//   background-color: $secondary-background-color;
-//   background-size: cover;
-//   padding-top: 10pt;
-//   padding-bottom: 10pt;
-//   clear: both;
-//   min-height: 100pt;
-//   display:inline-block;
-//   @include breakpoint(desktop)
-//     {
-//     margin: 0 auto;
-//     }
-//   }
-//
-// .main-portfolio{
-//   display: flex;
-//   flex-wrap: wrap;
-//   @extend %margin0;
-//    .col {flex-basis: 300px;
-//          align-content: space-between;
-//          margin: 0 auto;
-//           }
-//   @extend %primary_container_width;
-//   padding-bottom: 10pt;
-//   @extend %centered;
-//   @extend %margin0;
-//   @include breakpoint(tablet){
-//     width: $main-container-width ;
-//     }
-//   @include breakpoint(desktop){
-//     width: 95%;
-//
-//     }
-//   }
-//
-// .portfolio-text {
-//   @extend %primary_container_width;
-//   @extend %margin0;
-//   padding-bottom: 10pt;
-//   @include breakpoint(tablet){
-//     width: $main-container-width ;
-//     min-height: 50pt;
-//     max-height: 50pt;
-//     padding-bottom: 20pt;
-//     }
-//   }
-//
-// .skills, .contact{
-//   padding-top: 30pt;
-//   @extend %primary_container_width;
-//   @extend %margin0;
-//   @include breakpoint(tablet){
-//       clear:both;
-//       padding-top: 10pt;
-//       display:block;
-//       width: 60%;
-//       margin: 10pt auto;
-//       }
-//   }
-//
-// .phone {
-//   padding-top: 10pt;
-//   }
-//
-// .email{
-//   padding-bottom: 30pt;
-//   }
