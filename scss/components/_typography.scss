@@ -29,6 +29,12 @@ legend {
   }
 }
 
+p {
+  -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+  margin:0;
+  }
+
 .alert-box-text,
 .header-text
         {
@@ -67,7 +73,7 @@ legend {
 
   font-size: 2em;
   @include breakpoint (tablet){
-  
+
   }
 
 }
@@ -80,7 +86,7 @@ legend {
 }
 
 #alert-text {
-  padding: 0 1em;
+  padding: 1em;
 }
 
 #dash-page {
