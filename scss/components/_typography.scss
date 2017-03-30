@@ -33,14 +33,34 @@ p {
   -webkit-margin-before: 0em;
     -webkit-margin-after: 0em;
   margin:0;
+
+  }
+
+.activity-time {
+    padding: .5em 0;
+    @include breakpoint(tablet){
+      padding: 0;
+    }
   }
 
 .alert-box-text,
 .header-text
         {
           color: $secondary-font-color;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 60%;
+          @include breakpoint(tablet){
+            font-size: $T-header-h2-fontsize;
+
+          }
         }
 
+.member-names {
+  @include breakpoint (tablet){
+    margin-bottom: 0;
+  }
+}
 .member-emails {
   color: $tertiary-font-color;
   text-decoration: none;
@@ -96,89 +116,23 @@ p {
   }
 }
 
-
-
-// /*************** VARIABLES ****************/
-//
-// $header-h1-fontsize   :    25pt;
-// $secondary-fontsize   :    20pt;
-// $primary-fontfamily   :    arial, sans-serif;
-// $primary-font-color   :    black;
-//
-//
-//  $primary-fontsize    :    15pt;
-//  $primary-font-weight :    bold;
-//  $text-uppercase      :    uppercase;
-//
-//
-//
-//
-//
-// /*****could create mixin with font weight, size, text transorm as arguments to pass in with default values*****/
-//
-// @mixin Fonts ($fontsize:"15pt", $fontweight:"bold",$textransform:"uppercase", $fontcolor:black)
-// {font-size:$fontsize;
-// font-weight:$fontweight;
-// text-transform:$texttransform;
-// color: $fontcolor;
-// }
-//
-//
-// * {
-//   @include Fonts(null,lighter,null);
-//   font-family: $primary-fontfamily;
-//   }
-//
-//
-//   body {
-//
-//     font-family: $primary-fontfamily;
-//       }
-//
-// h1 {
-//   @include Fonts(bold,25px,none);
-//   }
-//
-// h2 {
-//   @include Fonts(20px);
-//   }
-//
-// h3 {
-//   @include Fonts(500,15px,none);
-//
-//   }
-//
-// a {
-//   @include Fonts(15,null,none);
-//   text-decoration: none;
-//   }
-//
-// .main-nav a {
-//   @include Fonts;
-//   line-height: 30pt;
-//     }
-//
-//
-// .profile-intro {
-// @include Fonts(15px,null,null);
-// line-height: 125%;
-//   }
-//
-//
-// .header-name{
-//   @include Fonts(null, bold,none);
-//
-//
-// }
-//
-//   .back-to-top a{
-//     @include Fonts(20px);
-//     }
-//
-//   @media (min-width: 768px){
-//
-//     .footer-li li
-//     {@include Fonts(null,null,uppercase);
-//
-//     }
-//   }
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    $primary-font-color;
+    opacity:  .9;
+    font-style: italic;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    $primary-font-color;
+   opacity:  .9;
+   font-style: italic;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    $primary-font-color;
+   opacity:  .9;
+   font-style: italic;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    $primary-font-color;
+   opacity:  .9;
+   font-style: italic;
+}

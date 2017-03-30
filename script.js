@@ -79,12 +79,6 @@ function weeklyChart () {
 
 
 
-
-
-
-//CREATE MONTHLY TRAFFIC LINE CHART
-
-
 //CREATE DAILY BAR CHART
 //
 function dailyBarChart () {
@@ -251,22 +245,9 @@ document.onload=dailyBarChart();
 document.onload=mobileUsersChart();
 
 
-
-
-
 // WHEN MESSAGE FORM SEND BUTTON CLICKED/ RUN messageFormTest () function
 document.getElementById('send-button').addEventListener('click', messageFormTest);
 
-//WHEN HOURLY BUTTON clicked
-    //SHOW HOURLY TRAFFLIC LINE CHART
-    //Give active button background-color/ remove other  buttons background colors
-
-//WHEN DAILY BUTTON clicked
-    //SHOW DAILY TRAFFLIC LINE CHART
-
-
-//WHEN WEEKLY BUTTON clicked
-  //SHOW WEEKLY TRAFFIC CHART
 
 
 // REMOVE  ALERT/NOTIFICATION BAR WHEN USER CLICKS X BUTTON

@@ -14,15 +14,19 @@ color: white;
 
 header{
   h1 {
-      margin: auto 0;
+      margin: 1.75em 0 0 0;
+        @include breakpoint (tablet) {
+        margin: auto 0;
+        }
       };
     @include breakpoint (tablet) {
+      margin: auto 0;
       position:fixed;
       width: 100%;
       z-index: 1000;
       };
   ul {
-      
+
       display: flex;
       flex-direction: row;
       justify-content: space-between;
