@@ -76,7 +76,7 @@ fieldset {
   outline: none;
   background-color: $primary-button-color;
   @include breakpoint(tablet){
-    margin: 1em 0 1em 0;
+    margin: 0 0 1em 0;
     };
    // input-select group end
  }
@@ -99,15 +99,19 @@ i {
     &:hover{cursor:pointer;};
     border: solid black;
     border-width: 0 3px 3px 0;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     padding: 2px;
     height: 1em;
     width: 1em;
-    margin-right: 1em;
-    margin-top: 3em;
+    margin: .5em auto;
     border-color: $primary-button-color;
-    @include breakpoint (desktop) {
-    margin-top: 1.5em;
+
+    @include breakpoint (tablet) {
+    display: inline-block;
+    // margin: auto 1em;
+    vertical-align: middle;
+    // margin-right: 1em;
     height: .5em;
     width: .5em;
     }
@@ -124,25 +128,30 @@ i {
     -webkit-transform: rotate(45deg);
 }
 
+.arrow-button-mobile {
+  border: $left-nav-icon-fill-color solid 2px;
+  height: 2.25em;
+     @include breakpoint (tablet) {
+       border: none;
+       padding-top: 1em;
+     }
+}
+
 // ARROW BUTTONS: END
 
 
-// LEFT NAV ICON/BUTON WHEN CLICKED// NOT WORKING/FUNCTIONAL
+// LEFT NAV ICON/BUTON WHEN CLICKED//
 .activeNavIcon {
   background-color: $secondary-button-color;
   display: inline;
 	position: absolute;
   overflow: visible;
-  // width: 100%;
-  // height: 2px;
-	// top: 2px;
   z-index: 1000000;
 	-webkit-border-radius: 25%;
 	-moz-border-radius: 25%;
 	border-radius: 25%;
 	transition-property: width, height;
   @include breakpoint (tablet){
-
     left: -2em;
     width: 15px;
   	height: 50px;

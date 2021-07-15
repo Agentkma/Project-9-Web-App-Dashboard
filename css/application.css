@@ -4,8 +4,11 @@
   box-sizing: border-box;
   list-style: none; }
 
+a:focus,
+input:focus {
+  cursor: pointer; }
+
 body {
-  /*width: 95%;*/
   margin: 0 auto; }
   body ul {
     list-style: none;
@@ -14,7 +17,6 @@ body {
 /*******VARIABLES*********/
 /**Mobile**/
 /**Tablet**/
-/**Desktop**/
 /*************MIXINS**************/
 * {
   font-family: Futura, 'Trebuchet MS', Arial, sans-serif; }
@@ -88,7 +90,7 @@ fieldset input {
     #save-button,
     #cancel-button,
     #send-button {
-      margin: 1em 0 1em 0; } }
+      margin: 0 0 1em 0; } }
 
 #send-button {
   width: 100%; }
@@ -100,18 +102,19 @@ button#cancel-button {
 i {
   border: solid black;
   border-width: 0 3px 3px 0;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   padding: 2px;
   height: 1em;
   width: 1em;
-  margin-right: 1em;
-  margin-top: 3em;
+  margin: .5em auto;
   border-color: mediumslateblue; }
   i:hover {
     cursor: pointer; }
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     i {
-      margin-top: 1.5em;
+      display: inline-block;
+      vertical-align: middle;
       height: .5em;
       width: .5em; } }
 
@@ -122,6 +125,14 @@ i {
 .down {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg); }
+
+.arrow-button-mobile {
+  border: lightgray solid 2px;
+  height: 2.25em; }
+  @media (min-width: 768px) {
+    .arrow-button-mobile {
+      border: none;
+      padding-top: 1em; } }
 
 .activeNavIcon {
   background-color: green;
@@ -189,20 +200,13 @@ i {
   background-color: mediumslateblue;
   border-width: 10px;
   border-radius: 50%;
-  padding: 40px;
+  padding: 20px;
   margin: auto;
   fill: #ffffff; }
-  @media (min-width: 768px) {
-    .socialIcon {
-      padding: 20px; } }
 
 .socialIcon > svg {
-  width: 50px;
-  height: 50px; }
-  @media (min-width: 768px) {
-    .socialIcon > svg {
-      width: 30px;
-      height: 30px; } }
+  width: 30px;
+  height: 30px; }
 
 .socialName {
   margin: auto 0; }
@@ -236,7 +240,7 @@ li #dashboard-icon {
   border-radius: 50%; }
 
 * {
-  color: gray;
+  color: black;
   font-size: 15pt; }
   @media (min-width: 768px) {
     * {
@@ -261,12 +265,29 @@ p {
   -webkit-margin-after: 0em;
   margin: 0; }
 
+.activity-time {
+  padding: .5em 0; }
+  @media (min-width: 768px) {
+    .activity-time {
+      padding: 0; } }
+
 .alert-box-text,
 .header-text {
-  color: white; }
+  color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 60%; }
+  @media (min-width: 768px) {
+    .alert-box-text,
+    .header-text {
+      font-size: 15pt; } }
+
+@media (min-width: 768px) {
+  .member-names {
+    margin-bottom: 0; } }
 
 .member-emails {
-  color: mediumslateblue;
+  color: slateblue;
   text-decoration: none; }
 
 @media (min-width: 1024px) {
@@ -279,7 +300,7 @@ p {
   color: white; }
 
 .socialName {
-  color: mediumslateblue;
+  color: slateblue;
   font-size: 1.5em;
   font-weight: bold; }
 
@@ -301,11 +322,34 @@ p {
     #dash-page {
       font-size: 1.5em; } }
 
-fieldset, .main-content {
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: black;
+  opacity: .9;
+  font-style: italic; }
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: black;
+  opacity: .9;
+  font-style: italic; }
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: black;
+  opacity: .9;
+  font-style: italic; }
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: black;
+  opacity: .9;
+  font-style: italic; }
+
+fieldset, .main-content, .main-content-div {
   margin: 0 auto; }
 
-fieldset, .new-members-each,
-.recent-each, #dash-search, #social-widgets {
+fieldset, #dash-search, #social-widgets {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -328,7 +372,6 @@ fieldset {
 
 .main-content {
   padding: 0 1em;
-  width: 95%;
   height: 100%;
   top: 4em; }
   @media (min-width: 768px) {
@@ -336,6 +379,9 @@ fieldset {
       position: absolute;
       left: 100px;
       width: 95%; } }
+
+.main-content-div {
+  max-width: 1200px; }
 
 @media (min-width: 768px) {
   .main-wrapper {
@@ -350,17 +396,28 @@ fieldset {
 
 .new-member-pic-email,
 .recent-pic-text {
-  display: flex;
-  width: 80%; }
+  display: block;
+  width: 80%;
+  justify-content: center; }
+  @media (min-width: 768px) {
+    .new-member-pic-email,
+    .recent-pic-text {
+      display: flex;
+      justify-content: flex-start; } }
 
 .new-members-each,
 .recent-each {
+  display: block;
+  justify-content: center;
   min-height: 10em;
   margin-bottom: 1em; }
   @media (min-width: 768px) {
     .new-members-each,
     .recent-each {
-      border: none; } }
+      border: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; } }
   @media (min-width: 1024px) {
     .new-members-each,
     .recent-each {
@@ -369,10 +426,13 @@ fieldset {
 .member-name-email,
 .recent-activity {
   width: 80%;
-  margin: auto 1em;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap; }
+  @media (min-width: 768px) {
+    .member-name-email,
+    .recent-activity {
+      margin: auto 1em; } }
 
 .member-pics {
   width: 4em;
@@ -384,12 +444,6 @@ fieldset {
       width: 2em;
       height: 2em; } }
 
-@media (min-width: 768px) {
-  .member-names,
-  .recent-activity > p,
-  .activity-time {
-    margin: .5em 0; } }
-
 .member-dates,
 .arrow-right {
   margin: auto 0;
@@ -400,10 +454,14 @@ fieldset {
 .settings-buttons {
   width: 100%;
   margin-bottom: 1.25em;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between; }
+  display: block; }
+  @media (min-width: 768px) {
+    .notification_p_lablel,
+    .settings-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between; } }
 
 .traffic {
   margin-bottom: 2em;
@@ -448,6 +506,9 @@ fieldset {
 #alert-box {
   border-radius: 5px;
   margin: 1em 0; }
+
+#alert-text {
+  width: 60%; }
 
 #new-members-recent,
 #recent-activity,
@@ -504,7 +565,7 @@ fieldset {
         display: flex; } }
 
 #message-textarea {
-  height: 6.5em;
+  height: 5.5em;
   -moz-appearance: textfield-multiline; }
 
 @media (min-width: 768px) {
@@ -561,9 +622,13 @@ header {
   color: white; }
 
 header h1 {
-  margin: auto 0; }
+  margin: 1.75em 0 0 0; }
+  @media (min-width: 768px) {
+    header h1 {
+      margin: auto 0; } }
 @media (min-width: 768px) {
   header {
+    margin: auto 0;
     position: fixed;
     width: 100%;
     z-index: 1000; } }

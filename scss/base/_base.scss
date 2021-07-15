@@ -1,19 +1,20 @@
-//
-//
-//
+
 // /*******GLOBAL STYLES*******/
 //
 * {
   box-sizing: border-box;
   list-style: none;
   }
-// *
-//  {
-//   border: black 2px solid;
-// }
+
+a:focus,
+input:focus,
+
+ {
+  cursor:pointer;
+}
 
 body{
-  /*width: 95%;*/
+
   margin: 0 auto;
   ul {
     list-style: none;
@@ -21,53 +22,3 @@ body{
   }
 
 }
-//
-//
-//
-//   /*******MAIN STYLES*******/
-//
-//
-//
-//
-//   body {
-//     margin: 20pt auto 0;
-//     @extend %centered;
-//     background: $primary-background-color;
-//     background-size: cover;
-//     padding-bottom: 10pt;
-//     padding-top: 10pt;
-//     @include breakpoint(tablet){
-//     padding-top: 15pt;}
-//       }
-//
-//   header {
-//     padding-bottom: 12.5pt;
-//     @include breakpoint(tablet)
-//       {
-//       padding-bottom: 0;
-//       }
-//     }
-//
-//
-//
-//   img {
-//         padding-top: 15pt;
-//         padding-bottom: 5pt;
-//         width:100%;
-//         }
-//
-//   p {
-//     @extend %centered
-//     }
-//
-//
-//
-//
-//
-//   .main-nav li {
-//       background-color: $secondary-background-color;
-//       @include breakpoint(tablet)
-//         {
-//           background: $primary-background-color;
-//         }
-//       }
